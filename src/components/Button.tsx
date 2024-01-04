@@ -5,7 +5,7 @@ type ButtonProps = {
   text: string;
   type: "button" | "submit";
   icon?: string;
-  variant: "btn_dark_green";
+  variant: string;
 };
 
 export default function Button({text, type, icon, variant}: ButtonProps) {
