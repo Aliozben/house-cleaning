@@ -12,7 +12,9 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "survey-creator-react": "^1.9.123"
+    "survey-core": "^1.9.124",
+    "survey-creator-react": "^1.9.123",
+    "survey-react-ui": "^1.9.124"
   },
   "devDependencies": {
     "@types/node": "^20",

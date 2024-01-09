@@ -14,9 +14,15 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  survey-core:
+    specifier: ^1.9.124
+    version: 1.9.124
   survey-creator-react:
     specifier: ^1.9.123
     version: 1.9.123(react-dom@18.2.0)(react@18.2.0)
+  survey-react-ui:
+    specifier: ^1.9.124
+    version: 1.9.124(react-dom@18.2.0)(react@18.2.0)(survey-core@1.9.124)
 
 devDependencies:
   '@types/node':
@@ -2509,6 +2515,10 @@ packages:
     resolution: {integrity: sha512-EaGAOHBLAdJ1Vu7d638WDDFw4BdG7xEKpWMwu6QfWMXSWJ9cYU6/1AYLN2YCF1bdXaOkQdrfu7+zV3d7vRFpAA==}
     dev: false
 
+  /survey-core@1.9.124:
+    resolution: {integrity: sha512-H+VlGIl2aqEbfxhvwCchvdkJcDqI6DlfaoCddVIfXtoHfn2HhPk9Db7bgKjFso45RQgdmck6+lv1dd6MrhciwQ==}
+    dev: false
+
   /survey-creator-core@1.9.123:
     resolution: {integrity: sha512-hKL19ZlDV1/Hkp8uRcIaVdlT5INZi40fCcS49yz8N8MJy2h7RFGv9LGwmzxRiMyFGFg1BO+snEMWL6dyQz8//Q==}
     engines: {node: '>=0.10.0'}
@@ -2549,6 +2559,18 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       survey-core: 1.9.123
+    dev: false
+
+  /survey-react-ui@1.9.124(react-dom@18.2.0)(react@18.2.0)(survey-core@1.9.124):
+    resolution: {integrity: sha512-wLVJy2v7wrUqJU2YTZhke038aoVAuwebIoWJ1OpqcImKER/bP81KIY03WdX0WyK9dHVTzLLjoxaRdQpTLgoyqw==}
+    peerDependencies:
+      react: ^16.5.0 || ^17.0.1 || ^18.2.0
+      react-dom: ^16.5.0 || ^17.0.1 || ^18.2.0
+      survey-core: '*'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      survey-core: 1.9.124
     dev: false
 
   /tailwindcss@3.4.0:
