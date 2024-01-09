@@ -1,7 +1,11 @@
+"use client";
 import Button from "@/components/Button";
+import {NAV_ABOUT_PAGE, NAV_LINKS, NAV_SERVICES_PAGE} from "@/constants";
 import Image from "next/image";
+import {useRouter} from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
       <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
@@ -16,11 +20,17 @@ export default function Home() {
             lacus.
           </p>
           <div className="mt-10 w-full gap-3 flex flex-col sm:flex-row">
-            <Button type="button" text="Get An Offer" variant="btn_green" />
+            <Button
+              type="button"
+              text="Get An Offer"
+              variant="btn_green"
+              onClick={() => router.push(NAV_SERVICES_PAGE.href)}
+            />
             <Button
               type="button"
               text="How we work?"
               variant="btn_white_text"
+              onClick={() => router.push(NAV_ABOUT_PAGE.href)}
             />
           </div>
         </div>
