@@ -1,7 +1,39 @@
 // NAVIGATION
+export const NAV_SERVICES_PAGE = {
+  href: "/services",
+  key: "services",
+  label: "Services",
+};
+export const NAV_HOME_PAGE = {href: "/", key: "home", label: "Home"};
+export const NAV_ABOUT_PAGE = {
+  href: "/about_us",
+  key: "about_us",
+  label: "About Us",
+};
+export const NAV_CONTACT_PAGE = {
+  href: "/contact_us",
+  key: "contact_us",
+  label: "Contact Us",
+};
 export const NAV_LINKS = [
-  {href: "/", key: "home", label: "Home"},
-  {href: "/services", key: "services", label: "Services"},
-  {href: "/about_us", key: "about_us", label: "About Us"},
-  {href: "/contact_us", key: "contact_us", label: "Contact Us"},
+  NAV_HOME_PAGE,
+  NAV_SERVICES_PAGE,
+  NAV_ABOUT_PAGE,
+  NAV_CONTACT_PAGE,
 ];
+
+//FOOTER
+export const FOOTER = [
+  {
+    title: "Learn More",
+    links: ["About Atlantis Cleaning", "Contact Us"],
+  },
+];
+
+export const FOOTER_CONTACT_INFO = {
+  title: "Contact Us",
+  links: [
+    {label: "Admin Officer", value: "123-456-7890"},
+    {label: "Email Officer", value: "hilink@akinthil.com"},
+  ],
+};
