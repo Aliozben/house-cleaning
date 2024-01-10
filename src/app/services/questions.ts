@@ -34,6 +34,12 @@ export const questions = {
                 "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
               text: "Construction Cleaning",
             },
+            {
+              value: "move",
+              imageLink:
+                "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
+              text: "Move in-Move out Cleaning",
+            },
           ],
           showLabel: true,
         },
@@ -83,7 +89,7 @@ export const questions = {
         {
           type: "imagepicker",
           name: "frequency",
-          title: "How often clean your place",
+          title: "How often do you clean your place?",
           choices: [
             {
               value: "day",
@@ -124,7 +130,7 @@ export const questions = {
           title: "How often do you want your environemnt to be cleaned",
           choices: [
             {
-              value: "day",
+              value: "oneTime",
               text: "One time",
             },
             {
@@ -137,7 +143,7 @@ export const questions = {
             },
             {
               value: "month",
-              text: "Never",
+              text: "Every Month",
             },
           ],
           imageFit: "cover",
@@ -193,9 +199,22 @@ export const questions = {
         },
         {
           type: "boolean",
-          name: "question1",
+          name: "basement",
           title: "Do you also have basement",
           isRequired: true,
+        },
+        {
+          type: "boolean",
+          name: "pet",
+          title: "Do you have a pet?",
+          isRequired: true,
+        },
+        {
+          type: "boolean",
+          name: "renovation",
+          title: "is the environment renovated in last 3 months?",
+          isRequired: true,
+          default: false,
         },
       ],
     },
