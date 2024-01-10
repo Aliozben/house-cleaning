@@ -3,7 +3,6 @@ import React from "react";
 import {ITheme, Model} from "survey-core";
 import {Survey} from "survey-react-ui";
 import {themeJson} from "./theme";
-// import {questions} from "./questions";
 import {useCallback} from "react";
 
 export default function SurveyComponent({
