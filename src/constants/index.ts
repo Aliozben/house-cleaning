@@ -4,6 +4,11 @@ export const NAV_SERVICES_PAGE = {
   key: "services",
   label: "Services",
 };
+export const NAV_GET_OFFER = {
+  href: "/getOffer",
+  key: "getoffer",
+  label: "Get An Offer",
+};
 export const NAV_HOME_PAGE = {href: "/", key: "home", label: "Home"};
 export const NAV_ABOUT_PAGE = {
   href: "/about_us",
@@ -18,6 +23,7 @@ export const NAV_CONTACT_PAGE = {
 export const NAV_LINKS = [
   NAV_HOME_PAGE,
   NAV_SERVICES_PAGE,
+  NAV_GET_OFFER,
   NAV_ABOUT_PAGE,
   NAV_CONTACT_PAGE,
 ];
