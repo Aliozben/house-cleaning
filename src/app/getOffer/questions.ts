@@ -12,33 +12,28 @@ export const questions = {
           isRequired: true,
           choices: [
             {
-              value: "generalCleaning",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
-              text: "General Cleaning",
+              value: "General Cleaning",
             },
             {
-              value: "deepCleaning",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
-              text: "Deep Cleaning",
+              value: "Deep Cleaning",
             },
             {
-              value: "officeCleaning",
               imageLink: "/officeCleaning.svg",
-              text: "Office Cleaning",
+              value: "Office Cleaning",
             },
             {
-              value: "constructionCleaning",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
-              text: "Construction Cleaning",
+              value: "Construction Cleaning",
             },
             {
-              value: "move",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
-              text: "Move in-Move out Cleaning",
+              value: "Move in-Move out Cleaning",
             },
           ],
           showLabel: true,
@@ -54,28 +49,24 @@ export const questions = {
           title: "What type of environment you want to be cleaned?",
           choices: [
             {
-              value: "townHouse",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/lion.jpg",
-              text: "Townhouse",
+              value: "Townhouse",
             },
             {
-              value: "familyHouse",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
-              text: "Family House",
+              value: "Family House",
             },
             {
-              value: "apartment",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/panda.jpg",
-              text: "Apartment",
+              value: "Apartment",
             },
             {
-              value: "condominium",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
-              text: "condominium",
+              value: "Condominium",
             },
           ],
           imageFit: "cover",
@@ -92,28 +83,24 @@ export const questions = {
           title: "How often do you clean your place?",
           choices: [
             {
-              value: "day",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/lion.jpg",
-              text: "Everyday",
+              value: "Everyday",
             },
             {
-              value: "week",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
-              text: "Once a week",
+              value: "Once a week",
             },
             {
-              value: "month",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/panda.jpg",
-              text: "Once a month",
+              value: "Once a month",
             },
             {
-              value: "never",
               imageLink:
                 "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
-              text: "Never",
+              value: "Never",
             },
           ],
           imageFit: "cover",
@@ -130,20 +117,16 @@ export const questions = {
           title: "How often do you want your environemnt to be cleaned",
           choices: [
             {
-              value: "oneTime",
-              text: "One time",
+              value: "One time",
             },
             {
-              value: "week",
-              text: "Every week",
+              value: "Every week",
             },
             {
-              value: "otherWeek",
-              text: "Every other week",
+              value: "Every other week",
             },
             {
-              value: "month",
-              text: "Every Month",
+              value: "Every Month",
             },
           ],
           imageFit: "cover",
@@ -157,7 +140,6 @@ export const questions = {
         {
           type: "multipletext",
           name: "rooms",
-          useDisplayValuesInDynamicTexts: false,
           title: "How many rooms you want to be cleaned",
           description: "Please select all that apply.",
           items: [
@@ -251,16 +233,13 @@ export const questions = {
           isRequired: true,
           choices: [
             {
-              value: "call",
-              text: "Call",
+              value: "Call",
             },
             {
-              value: "email",
-              text: "Email",
+              value: "Email",
             },
             {
-              value: "text",
-              text: "Text",
+              value: "Text",
             },
           ],
         },
@@ -272,7 +251,6 @@ export const questions = {
         {
           type: "multipletext",
           name: "nameInfo",
-          useDisplayValuesInDynamicTexts: false,
           title: "Fill the blanks.",
           items: [
             {
@@ -292,17 +270,17 @@ export const questions = {
         {
           type: "text",
           name: "phone",
-          visibleIf: "{contact} = 'call' or {contact} = 'text'",
+          visibleIf: "{contact} = 'Call' or {contact} = 'Text'",
           title: "Phone number",
-          requiredIf: "{contact} = 'call' or {contact} = 'text'",
+          requiredIf: "{contact} = 'Call' or {contact} = 'Text'",
           inputType: "tel",
         },
         {
           type: "text",
           name: "email",
-          visibleIf: "{contact} = 'email'",
+          visibleIf: "{contact} = 'Email'",
           title: "E-mail",
-          requiredIf: "{contact} = 'email'",
+          requiredIf: "{contact} = 'Email'",
           inputType: "email",
         },
         {
@@ -319,7 +297,5 @@ export const questions = {
   showProgressBar: "top",
   progressBarType: "questions",
   autoGrowComment: true,
-  // questionsOnPageMode: "questionPerPage",
   fitToContainer: true,
-  // widthMode: "responsive",
 };

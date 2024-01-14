@@ -6,6 +6,8 @@ import Link from "next/link";
 import Button from "./Button";
 import {useRouter} from "next/navigation";
 import {useSession} from "next-auth/react";
+import {Disclosure} from "@headlessui/react";
+import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   const router = useRouter();
@@ -36,13 +38,47 @@ export default function Navbar() {
           />
         </div>
       )}
-      <Image
-        src="./vercel.svg"
-        alt="menu"
-        width={32}
-        height={32}
-        className="inline-block cursor-pointer lg:hidden"
-      />
+      <div className="inline-block cursor-pointer lg:hidden">
+        <Disclosure>
+          {({open}) => (
+            <>
+              <Disclosure.Button className="relative  rounded-md  p-2 text-gray-400 hover:bg-green-50 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <span className="absolute -inset-0.5" />
+                <span className="sr-only">Open main menu</span>
+                {open ? (
+                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                ) : (
+                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                )}
+              </Disclosure.Button>
+              <Disclosure.Panel>
+                <div className="space-y-1 absolute -mx-20 backdrop-blur-sm rounded-md">
+                  {NAV_LINKS.map(item => (
+                    <Disclosure.Button
+                      key={item.key}
+                      as="a"
+                      href={item.href}
+                      className=" tex-gray-50 hover:bg-green-50 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                      aria-current={item ? "page" : undefined}
+                    >
+                      {item.label}
+                    </Disclosure.Button>
+                  ))}
+                  {status === "authenticated" && (
+                    <Disclosure.Button
+                      as="a"
+                      href="/dashboard"
+                      className=" hover:tex-gray-50 hover:bg-green-50 bg-gray-50 text-white block  px-3 py-2 text-base font-medium"
+                    >
+                      Dashboard
+                    </Disclosure.Button>
+                  )}
+                </div>
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+      </div>
     </nav>
   );
 }
