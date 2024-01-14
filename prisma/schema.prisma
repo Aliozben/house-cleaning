@@ -74,4 +74,5 @@ model Survey {
   phone             Int?
   email             String?
   address           String
+  sideNote          String?
 }
