@@ -1,9 +1,15 @@
+"use client";
+
 import {NAV_LINKS} from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
+import {useRouter} from "next/navigation";
+import {useSession} from "next-auth/react";
 
 export default function Navbar() {
+  const router = useRouter();
+  const {status} = useSession();
   return (
     <nav className="flexBetween max-container padding-container relative z-30 py-5">
       <Link href="/">
@@ -20,10 +26,16 @@ export default function Navbar() {
           </Link>
         ))}
       </ul>
-      <div className="lg:flexCenter hidden">
-        <Button text="Login" type="button" variant="btn_dark_green" />
-      </div>
-
+      {status === "authenticated" && (
+        <div className="lg:flexCenter hidden">
+          <Button
+            text="Dashboard"
+            type="button"
+            variant="btn_dark_green"
+            onClick={() => router.push("/dashboard")}
+          />
+        </div>
+      )}
       <Image
         src="./vercel.svg"
         alt="menu"
