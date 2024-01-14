@@ -190,7 +190,7 @@ export const questions = {
               maxLength: 2,
             },
             {
-              name: "Estimated Footage",
+              name: "estimatedFootage",
               isRequired: true,
               placeholder: "100",
               inputType: "number",

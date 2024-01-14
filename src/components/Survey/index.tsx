@@ -4,6 +4,7 @@ import {ITheme, Model} from "survey-core";
 import {Survey} from "survey-react-ui";
 import {themeJson} from "./theme";
 import {useCallback} from "react";
+import type {Survey as SurveyType} from "@prisma/client";
 
 export default function SurveyComponent({
   questions,
@@ -20,6 +21,6 @@ export default function SurveyComponent({
   return <Survey model={survey} />;
 }
 
-const saveSurveyResult = (data: any) => {
+const saveSurveyResult = (data: SurveyType) => {
   console.log(JSON.stringify(data, null, 3));
 };
