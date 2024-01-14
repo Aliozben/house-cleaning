@@ -2,7 +2,7 @@ import {z} from "zod";
 import {NextRequest, NextResponse} from "next/server";
 import prisma from "@/lib/db";
 
-export const surveySchema = z.object({
+const surveySchema = z.object({
   type: z.string(),
   environment: z.string(),
   desiredFrequency: z.string(),
