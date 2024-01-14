@@ -21,7 +21,8 @@
     "react-dom": "^18",
     "survey-core": "^1.9.124",
     "survey-creator-react": "^1.9.123",
-    "survey-react-ui": "^1.9.124"
+    "survey-react-ui": "^1.9.124",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
