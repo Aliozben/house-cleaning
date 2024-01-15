@@ -1,9 +1,9 @@
-import {Tabs, tabs} from "@/app/dashboard/page";
+import {Tabs} from "@/app/dashboard/page";
 import {classNames} from "@/utils/style";
 import {Disclosure} from "@headlessui/react";
 
 type DashboardTabsProps = {
-  tabs: typeof tabs;
+  tabs: readonly Tabs[];
   activeTab: Tabs;
   setActiveTab: (tab: Tabs) => void;
 };

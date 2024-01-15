@@ -4,7 +4,7 @@ import DashboardTabs from "@/app/dashboard/DashboardTabs";
 import {useState} from "react";
 import SurveyDetailsPage from "./SurveyDetails";
 
-export const tabs = ["Surveys", "Users"] as const;
+const tabs = ["Surveys", "Users"] as const;
 
 export type Tabs = (typeof tabs)[number];
 
