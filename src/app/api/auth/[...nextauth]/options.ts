@@ -17,7 +17,8 @@ export const options: NextAuthOptions = {
         password: {label: "Password", type: "password"},
       },
       async authorize(credentials) {
-        if (!credentials?.username || !credentials?.password) return null;
+        if (!credentials || !credentials.username || !credentials.password)
+          return null;
         const user = await prisma.user.findFirst({
           where: {
             username: credentials.username,
