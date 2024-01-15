@@ -24,7 +24,7 @@ export const options: NextAuthOptions = {
             username: credentials.username,
           },
         });
-        if (!user) return null;
+        if (!user || user.password) return null;
 
         const passwordCorrect = await bcrypt.compare(
           credentials.password,
