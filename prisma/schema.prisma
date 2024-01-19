@@ -46,10 +46,10 @@ model User {
 }
 
 type Room {
-  bedroom          Int
-  bathroom         Int
-  halfBathroom     Int
-  otherRoom        Int
+  bedroom          Int?
+  bathroom         Int?
+  halfBathroom     Int?
+  otherRoom        Int?
   estimatedFootage Int
 }
 

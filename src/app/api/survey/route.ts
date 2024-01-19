@@ -7,10 +7,10 @@ const surveySchema = z.object({
   environment: z.string(),
   desiredFrequency: z.string(),
   rooms: z.object({
-    bathroom: z.number(),
-    bedroom: z.number(),
-    halfBathroom: z.number(),
-    otherRoom: z.number(),
+    bathroom: z.number().optional(),
+    bedroom: z.number().optional(),
+    halfBathroom: z.number().optional(),
+    otherRoom: z.number().optional(),
     estimatedFootage: z.number(),
   }),
   basement: z.boolean(),
@@ -30,10 +30,12 @@ const surveySchema = z.object({
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
+  console.log(body);
   const survey = surveySchema.safeParse(body);
-  console.log(survey);
-  if (!survey.success)
+  if (!survey.success) {
+    console.error(survey.error.issues);
     return NextResponse.json(survey.error.issues, {status: 400});
+  }
   const surveyIsSaved = await prisma.survey.create({data: body});
   return NextResponse.json(surveyIsSaved);
 }
