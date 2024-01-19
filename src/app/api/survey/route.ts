@@ -39,6 +39,13 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  const surveys = await prisma.survey.findMany();
+  const surveys = await prisma.survey.findMany({
+    select: {
+      id: true,
+      nameInfo: true,
+      lastReadDate: true,
+    },
+  });
+
   return NextResponse.json(surveys);
 }
