@@ -59,7 +59,7 @@ type NameInfo {
 }
 
 model Survey {
-  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
   type              String
   environment       String
   desiredFrequency  String
@@ -75,4 +75,5 @@ model Survey {
   email             String?
   address           String
   sideNote          String?
+  lastReadDate      DateTime?
 }
