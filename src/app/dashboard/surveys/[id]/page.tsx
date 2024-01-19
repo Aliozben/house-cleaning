@@ -1,4 +1,4 @@
-import {getSurvey} from "@/utils/db";
+import {getSurvey, updateSurveyLastReadDate} from "@/utils/db";
 import Checkbox from "@/components/Checkbox";
 
 export default async function SurveyDetailsPage({
@@ -6,6 +6,7 @@ export default async function SurveyDetailsPage({
 }: {
   params: {id: string};
 }) {
+  updateSurveyLastReadDate(params.id);
   const survey = await getSurvey(params.id);
 
   if (!survey) return <>Could not find the Survey </>;
