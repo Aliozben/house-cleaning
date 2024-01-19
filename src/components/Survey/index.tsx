@@ -22,5 +22,8 @@ export default function SurveyComponent({
 }
 
 const saveSurveyResult = (data: SurveyType) => {
-  console.log(JSON.stringify(data, null, 3));
+  fetch("/api/survey", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
 };
