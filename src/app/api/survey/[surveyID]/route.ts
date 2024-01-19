@@ -1,6 +1,9 @@
 import prisma from "@/lib/db";
 
-export async function DELETE({params}: {params: {surveyID: string}}) {
+export async function DELETE(
+  req: Request,
+  {params}: {params: {surveyID: string}}
+) {
   const {surveyID} = params;
   try {
     const res = await prisma.survey.delete({
