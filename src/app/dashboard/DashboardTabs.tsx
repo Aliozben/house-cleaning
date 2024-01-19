@@ -2,11 +2,15 @@
 
 import {classNames} from "@/utils/style";
 import {Disclosure} from "@headlessui/react";
+import Link from "next/link";
+import {useState} from "react";
 
 type DashboardTabsProps = {};
 export default function DashboardTabs({}: DashboardTabsProps) {
   const tabs = ["Surveys", "Users"] as const;
-  let activeTab = "Surveys";
+  type Tab = (typeof tabs)[number];
+  const [activeTab, setActiveTab] = useState<Tab>();
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -18,9 +22,10 @@ export default function DashboardTabs({}: DashboardTabsProps) {
               </h2>
             </div>
             {tabs.map(tab => (
-              <a
+              <Link
                 key={tab}
                 href={`/dashboard/${tab.toLowerCase()}`}
+                onClick={() => setActiveTab(tab)}
                 className={classNames(
                   activeTab === tab
                     ? "bg-green-50 text-white"
@@ -29,7 +34,7 @@ export default function DashboardTabs({}: DashboardTabsProps) {
                 )}
               >
                 {tab}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
