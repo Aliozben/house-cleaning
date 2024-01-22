@@ -11,7 +11,7 @@ export const NAV_GET_OFFER = {
 } as const;
 export const NAV_HOME_PAGE = {href: "/", key: "home", label: "Home"};
 export const NAV_ABOUT_PAGE = {
-  href: "/about_us",
+  href: "/about",
   key: "about_us",
   label: "About Us",
 } as const;
@@ -39,8 +39,10 @@ export const FOOTER = [
 export const FOOTER_CONTACT_INFO = {
   title: "Contact Us",
   links: [
-    {label: "Admin Officer", value: "123-456-7890"},
-    {label: "Email Officer", value: "hilink@akinthil.com"},
+    {label: "Address", value: "Atlantis Cleaning LLC \r Gaithersburg/Maryland"},
+    {label: "Phone", value: "123-456-7890"},
+    {label: "Email", value: "hilink@akinthil.com"},
+    {label: "Hours", value: "Monday through Saturday 8am/5 pm"},
   ],
 } as const;
 
@@ -201,7 +203,7 @@ export const FEATURES: Feature[] = [
   },
   {
     title: "Detailed cleaning / One time cleaning / Initial cleaning ",
-    icon: "/cleaning.svg",
+    icon: "/cleaningGreen.svg",
     variant: "green",
     rooms: [
       {
@@ -271,6 +273,79 @@ export const FEATURES: Feature[] = [
     notes: [
       "Ask for steam cleaning for kitchen counters,sink,couches(sofa) and toilet bowls ",
       "We do not recommend or guarantee leather,wood and surfaces that will be adversely affected by contact with steam.",
+    ],
+  },
+  {
+    title: "General Cleaning",
+    icon: "/general.svg",
+    variant: "green",
+    rooms: [
+      {
+        name: "Kitchen",
+        bulletPoints: [
+          "Clean outside of refrigerator ",
+          "Clean outside and inside of oven ",
+          "Clean outside and inside edge of dishwasher",
+          "Dust light fixtures a Wash cabinet fronts",
+          "Clean inside and out of microwave",
+          "Wipe clean small appliances (coffee maker toaster blender) ",
+          "Clean stove top & drip pans",
+          "Clean sink and faucets",
+          "Clean all counters",
+          "Wash table and chairs",
+          "Vacuum and mop floors",
+          "Sliding deck door ",
+          "(Outside of the cabinets and inside the refrigerator extra charge)",
+        ],
+      },
+      {
+        name: "Bathroom(s)",
+        bulletPoints: [
+          "Clean and polish tub and/or shower walls, foor, and any enclosure",
+          "Dust light fixture",
+          "Clean and shine mirrors",
+          "Clean outside of cabinets and drawers",
+          "Clean and polish faucet, sink, and counters",
+          "Clean and disinfect toilet",
+          "Spot clean baseboards",
+          "Vacuum and wash floors",
+          "Fold towels and toilet paper",
+          "Take trash out ",
+        ],
+      },
+      {
+        name: "Bedroom(s)",
+        bulletPoints: [
+          "Change bed linens",
+          "Remove cobwebs",
+          "Windowsills",
+          "Ceiling fans",
+          "Dust furniture ",
+          "Vacuum floors",
+          " Mop bare floors",
+          "Sliding door ",
+          "Fix blinds ",
+          "Take trash out ",
+        ],
+      },
+      {
+        name: "Living & Dining Room",
+        bulletPoints: [
+          "Vacuum upholstered furniture ",
+          "Sliding door ",
+          "Fix couches and pillows ,",
+          "blinds fixed ",
+          "Windowsills ",
+          "Tables and chairs ",
+          "Dust tv unit",
+          "Vacuum and mop the stairs/steps",
+          "(Not cleaning photo fragme and tv )",
+        ],
+      },
+    ],
+    notes: [
+      "Ask for steam cleaning for kitchen counters,sink couches and toilet bowls",
+      "Note : We do not recommend or guarantee leather, wood and surfaces that will be adversely affected by contact with steam.",
     ],
   },
 ] as const;
