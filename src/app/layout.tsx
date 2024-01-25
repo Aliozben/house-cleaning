@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import Provider from "@/context/Provider";
 
 export const metadata: Metadata = {
-  title: "House Cleaning",
-  description: `let's clean your house!`,
+  title: "Atlantis Cleaning LLC",
+  description: `Cleanliness is the ultimate style.`,
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
