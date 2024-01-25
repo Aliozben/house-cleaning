@@ -1,6 +1,7 @@
 import {z} from "zod";
 import {NextRequest, NextResponse} from "next/server";
 import prisma from "@/lib/db";
+import {limitter} from "@/lib/rateLimitter";
 
 const surveySchema = z.object({
   type: z.string(),
@@ -30,6 +31,9 @@ const surveySchema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  const {success} = await limitter(req);
+  if (!success) return NextResponse.json("Too many request!", {status: 403});
+
   const body = await req.json();
   const survey = surveySchema.safeParse(body);
   if (!survey.success) {
