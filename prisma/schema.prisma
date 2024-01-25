@@ -67,6 +67,7 @@ model Survey {
   basement          Boolean
   pet               Boolean
   renovation        Boolean
+  constructionDust  Boolean?
   date              String
   additionalDetails String?
   contact           String

@@ -54,7 +54,7 @@ export default async function SurveyDetailsPage({
             </div>
           </div>
 
-          <div className="sm:col-span-2">
+          <div className="col-span-2">
             <label className="block text-sm font-semibold leading-6 text-gray-900">
               Email
             </label>
@@ -173,7 +173,7 @@ export default async function SurveyDetailsPage({
               />
             </div>
           </div>
-          <div className="">
+          <div>
             <label className="block text-sm font-semibold leading-6 text-gray-900">
               Footage
             </label>
@@ -200,18 +200,27 @@ export default async function SurveyDetailsPage({
               />
             </div>
           </div>
-          <div className="flex col-span-4 justify-between">
-            <Checkbox
-              label="Basement"
-              defaultStatus={survey.basement}
-              readonly
-            />
-            <Checkbox label="Pet" defaultStatus={survey.pet} readonly />
-            <Checkbox
-              label="Renovation"
-              defaultStatus={survey.renovation}
-              readonly
-            />
+          <div className="flex col-span-4 items-center justify-evenly md:justify-between">
+            <div className="flex flex-col sm:flex-row gap-y-5 items-end sm:justify-around sm:col-span-4 sm:w-1/2">
+              <Checkbox
+                label="Basement"
+                defaultStatus={survey.basement}
+                readonly
+              />
+              <Checkbox label="Pet" defaultStatus={survey.pet} readonly />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-y-5 items-end sm:justify-evenly sm:col-span-4 sm:w-1/2">
+              <Checkbox
+                label="Renovation"
+                defaultStatus={survey.renovation}
+                readonly
+              />
+              <Checkbox
+                label="Dust"
+                defaultStatus={survey.constructionDust || false}
+                readonly
+              />
+            </div>
           </div>
           <div className="col-span-4">
             <label className="block text-sm font-semibold leading-6 text-gray-900">

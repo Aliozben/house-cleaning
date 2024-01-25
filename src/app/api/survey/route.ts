@@ -16,6 +16,7 @@ const surveySchema = z.object({
   basement: z.boolean(),
   pet: z.boolean(),
   renovation: z.boolean(),
+  contructionDust: z.boolean().optional(),
   date: z.string(),
   additionalDetails: z.string().optional(),
   contact: z.string(),
@@ -30,7 +31,6 @@ const surveySchema = z.object({
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  console.log(body);
   const survey = surveySchema.safeParse(body);
   if (!survey.success) {
     console.error(survey.error.issues);
