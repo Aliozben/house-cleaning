@@ -301,14 +301,8 @@ export const questions = {
       ],
     },
   ],
-  cookieName: "cleaning-survey",
   showProgressBar: "top",
   progressBarType: "questions",
   autoGrowComment: true,
   fitToContainer: true,
-  completedHtml:
-    "<h3>Thank you for choosing Atlantis Cleaning LLC!Looking forward to the opportunity of serving you.</h3>",
-    completedBeforeHtml: "<h3>Thank you for choosing Atlantis Cleaning LLC!</h3>",
-    completedAfterHtml: "<h3>Looking forward to the opportunity of serving you.</h3>",
-    
 };
