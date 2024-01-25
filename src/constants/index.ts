@@ -24,7 +24,7 @@ export const NAV_ABOUT_PAGE = {
 } as const;
 
 export const NAV_CONTACT_PAGE = {
-  href: "/contact_us",
+  href: "/contact",
   key: "contact_us",
   label: "Contact Us",
 } as const;
