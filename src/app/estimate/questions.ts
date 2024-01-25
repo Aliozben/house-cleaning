@@ -194,8 +194,16 @@ export const questions = {
         {
           type: "boolean",
           name: "renovation",
-          title: "is the environment renovated in last 3 months?",
+          title: "Is the environment renovated in last 3 months?",
           isRequired: true,
+          default: false,
+        },
+        {
+          type: "boolean",
+          name: "constructionDust",
+          title: "Post construction dust left over?",
+          visibleIf: "{constructionDust} = true",
+          requiredIf: "{constructionDust} = true",
           default: false,
         },
       ],
@@ -298,4 +306,9 @@ export const questions = {
   progressBarType: "questions",
   autoGrowComment: true,
   fitToContainer: true,
+  completedHtml:
+    "<h3>Thank you for choosing Atlantis Cleaning LLC!Looking forward to the opportunity of serving you.</h3>",
+    completedBeforeHtml: "<h3>Thank you for choosing Atlantis Cleaning LLC!</h3>",
+    completedAfterHtml: "<h3>Looking forward to the opportunity of serving you.</h3>",
+    
 };
