@@ -52,7 +52,7 @@ export default function Navbar() {
                 )}
               </Disclosure.Button>
               <Disclosure.Panel>
-                <div className="space-y-1 absolute -mx-20 backdrop-blur-sm rounded-md">
+                <div className="space-y-1 absolute -mx-28 backdrop-blur-sm rounded-md">
                   {NAV_LINKS.map(item => (
                     <Disclosure.Button
                       key={item.key}
