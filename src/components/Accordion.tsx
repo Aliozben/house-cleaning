@@ -20,14 +20,12 @@ export default function Accordion({
         onClick={() => setAccordionOpen(!accordionOpen)}
         className="flex items-center justify-between w-full"
       >
-        <div className="flex gap-3">
-          {" "}
-          <div className="rounded-full p-4 lg:p-6 bg-green-50">
+        <div className="flex gap-3 items-center">
+          <div className="rounded-full p-4 lg:p-6 mr-5 min-w-16 bg-green-50 items-end">
             <Image src={icon} alt="map" width={28} height={28} />
           </div>
-          <h2 className="bold-18 lg:bold-20 mt-5 capitalize">{title}</h2>
+          <p className="bold-18 lg:bold-20 capitalize text-left">{title}</p>
         </div>
-        {/* {accordionOpen ? <span>-</span> : <span>+</span>} */}
         <svg
           className="fill-green-50 shrink-0 ml-8"
           width="16"
