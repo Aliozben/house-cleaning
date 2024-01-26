@@ -9,6 +9,7 @@ export async function middleware(req: NextRequest) {
   }
 
   const session = await getToken({req});
+  console.log("session", session);
   if (!session) {
     return Response.json(
       {success: false, message: "authentication failed"},
