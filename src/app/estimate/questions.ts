@@ -12,27 +12,23 @@ export const questions = {
           isRequired: true,
           choices: [
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
+              imageLink: "/survey/generalCleaning.svg",
               value: "General Cleaning",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
-              value: "Deep Cleaning",
-            },
-            {
-              imageLink: "/officeCleaning.svg",
+              imageLink: "/survey/officeCleaning.svg",
               value: "Office Cleaning",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
+              imageLink: "/survey/constructionCleaning.svg",
               value: "Construction Cleaning",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
+              imageLink: "/survey/deepCleaning.svg",
+              value: "Deep Cleaning",
+            },
+            {
+              imageLink: "/survey/moveCleaning.svg",
               value: "Move in-Move out Cleaning",
             },
           ],
@@ -49,23 +45,19 @@ export const questions = {
           title: "What type of environment you want to be cleaned?",
           choices: [
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/lion.jpg",
+              imageLink: "/survey/townhouse.svg",
               value: "Townhouse",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
+              imageLink: "/survey/familyHouse.svg",
               value: "Family House",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/panda.jpg",
+              imageLink: "/survey/apartment.svg",
               value: "Apartment",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
+              imageLink: "/survey/condominium.svg",
               value: "Condominium",
             },
           ],

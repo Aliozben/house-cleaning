@@ -4,7 +4,7 @@ import {questions} from "./questions";
 
 export default function ServicesPage() {
   return (
-    <div>
+    <div className=" max-container padding-container  gap-20 md:gap-28  xl:flex-row">
       <SurveyComponent questions={questions} />
     </div>
   );

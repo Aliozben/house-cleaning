@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M5 4C4.44772 4 4 4.44772 4 5V19C4 19.5523 4.44772 20 5 20H12H13C13.5523 20 14 19.5523 14 19V5C14 4.44772 13.5523 4 13 4H5ZM5 22H12H13H19C20.6569 22 22 20.6569 22 19V9C22 7.34315 20.6569 6 19 6H16V5C16 3.34315 14.6569 2 13 2H5C3.34315 2 2 3.34315 2 5V19C2 20.6569 3.34315 22 5 22ZM19 20H15.8293C15.9398 19.6872 16 19.3506 16 19V8H19C19.5523 8 20 8.44772 20 9V19C20 19.5523 19.5523 20 19 20ZM7 14H5V16H7V14ZM8 14H10V16H8V14ZM13 14H11V16H13V14ZM17 14H19V16H17V14ZM19 10H17V12H19V10ZM5 10H7V12H5V10ZM10 10H8V12H10V10ZM11 10H13V12H11V10ZM7 6H5V8H7V6ZM8 6H10V8H8V6ZM13 6H11V8H13V6Z" fill="#000000"/>
-</svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#dbfae3">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier">
+<defs>
+<style>.cls-1{fill:none;stroke:#dbfae3;stroke-miterlimit:10;stroke-width:2px;}</style>
+</defs>
+<line class="cls-1" x1="4" y1="15.5" x2="4" y2="8.5"/>
+<line class="cls-1" x1="20" y1="8.5" x2="20" y2="15.5"/>
+<polyline class="cls-1" points="23 10.5 12 1.5 1 10.5"/>
+<line class="cls-1" x1="7" y1="14.5" x2="9" y2="14.5"/>
+<line class="cls-1" x1="11" y1="14.5" x2="13" y2="14.5"/>
+<line class="cls-1" x1="15" y1="14.5" x2="17" y2="14.5"/>
+<line class="cls-1" x1="7" y1="22.5" x2="9" y2="22.5"/>
+<line class="cls-1" x1="3" y1="22.5" x2="5" y2="22.5"/>
+<line class="cls-1" x1="11" y1="22.5" x2="13" y2="22.5"/>
+<line class="cls-1" x1="15" y1="22.5" x2="17" y2="22.5"/>
+<line class="cls-1" x1="19" y1="22.5" x2="21" y2="22.5"/>
+<line class="cls-1" x1="3" y1="18.5" x2="5" y2="18.5"/>
+<line class="cls-1" x1="19" y1="18.5" x2="21" y2="18.5"/>
+</g>
+</svg>

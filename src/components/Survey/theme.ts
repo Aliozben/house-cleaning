@@ -10,7 +10,7 @@ export const themeJson = {
     "--sjs-general-backcolor": "rgba(36, 50, 57, 1)",
     "--sjs-general-backcolor-dark": "rgba(248, 248, 248, 1)",
     "--sjs-general-backcolor-dim": "#ffffff",
-    "--sjs-general-backcolor-dim-light": "rgba(36, 50, 57, 1)", // button
+    "--sjs-general-backcolor-dim-light": "rgb(255, 255, 255)", // button
     "--sjs-general-backcolor-dim-dark": "rgba(243, 243, 243, 1)",
     "--sjs-general-forecolor": "rgba(0, 0, 0, 0.91)",
     "--sjs-general-forecolor-light": "rgba(0, 0, 0, 0.45)",
