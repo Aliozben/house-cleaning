@@ -41,7 +41,10 @@ export const NAV_LINKS = [
 export const FOOTER = [
   {
     title: "Learn More",
-    links: ["About Atlantis Cleaning LLC", "Contact Us"],
+    links: [
+      {header: "About Atlantis Cleaning LLC", href: "/"},
+      {header: "Contact Us", href: "/contact"},
+    ],
   },
 ] as const;
 
@@ -49,7 +52,7 @@ export const FOOTER_CONTACT_INFO = {
   title: "Contact Us",
   links: [
     {label: "Address", value: "Atlantis Cleaning LLC \r Gaithersburg/Maryland"},
-    {label: "Phone", value: "123-456-7890"},
+    {label: "Phone", value: "+1 240-507-0918"},
     {label: "Email", value: "hilink@akinthil.com"},
     {label: "Hours", value: "Monday - Saturday 8 AM/6 PM (holidays included)"},
   ],
@@ -285,7 +288,7 @@ export const FEATURES: Feature[] = [
   },
   {
     title: "General Cleaning",
-    icon: "/general.svg",
+    icon: "/generalCleaning.svg",
     variant: "green",
     rooms: [
       {
