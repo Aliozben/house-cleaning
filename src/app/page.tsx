@@ -139,7 +139,7 @@ export default function Home() {
                     <p>Olney</p>
                     <p>Gaithersburg </p>
                     <p>Montgomery village </p>
-                    <p>Germantow</p>
+                    <p>Germantown</p>
                     <p>Clarksburg</p>
                   </div>
                   <div>
