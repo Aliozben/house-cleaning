@@ -25,12 +25,12 @@ export default function SurveyComponent({
       [router]
     )
   );
-  return <Survey className='flex' model={survey} />;
+  return <Survey model={survey} />;
 }
 
 const saveSurveyResult = (data: SurveyType) => {
-  // fetch("/api/survey", {
-  //   method: "POST",
-  //   body: JSON.stringify(data),
-  // });
+  fetch("/api/survey", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
 };
