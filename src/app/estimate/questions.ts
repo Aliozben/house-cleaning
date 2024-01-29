@@ -106,7 +106,7 @@ export const questions = {
         {
           type: "radiogroup",
           name: "desiredFrequency",
-          title: "How often do you want your environemnt to be cleaned",
+          title: "How often do you want your environment to be cleaned",
           choices: [
             {
               value: "One time",
@@ -115,7 +115,7 @@ export const questions = {
               value: "Every week",
             },
             {
-              value: "Every other week",
+              value: "Once every two weeks",
             },
             {
               value: "Every Month",
