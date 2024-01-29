@@ -51,22 +51,19 @@ export default function Home() {
               <strong> Why should you choose Atlantis Cleaning Service?</strong>
             </h2>
             <div className="regular-12 xl:regular-16 mt-5 text-gary-100">
-              <p>We are certified professional cleaners.</p>
-              <p>7/24 Customer Support.</p>
-              <p>All cleaning supplies included.</p>
-              <p>
-                We have the option of disinfecting with steam. Who does not want
-                a clean environment free of germs?
-              </p>
-              <p>We are bonded and insured</p>
-              <p>We guarantee satisfaction </p>
-              <p>We give a 15% off your first cleaning job</p>
-              <p>Refer a new friend get 15% off both</p>
-              <p>
-                <strong>
-                  20% off a full house cleaning during the holiday season
-                </strong>
-              </p>
+              <li>We are certified professional cleaners.</li>
+              <li>7/24 Customer Support.</li>
+              <li>All cleaning supplies included.</li>
+              <li><p className="pl-5 -mt-5">
+                  We have the option of disinfecting with steam. Who does not
+                  want a clean environment free of germs?
+                </p>
+              </li>
+              <li>We are bonded and insured</li>
+              <li>We guarantee satisfaction </li>
+              <li>We give a 15% off your first cleaning job</li>
+              <li>Refer a new friend get 15% off both</li>
+              <li>20% off a full house cleaning during the holiday season</li>
             </div>
             <Image
               src="/cleaningGreen.svg"
