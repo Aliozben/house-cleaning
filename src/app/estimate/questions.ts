@@ -297,4 +297,5 @@ export const questions = {
   progressBarType: "questions",
   autoGrowComment: true,
   fitToContainer: true,
+  goNextPageAutomatic: true,
 };
