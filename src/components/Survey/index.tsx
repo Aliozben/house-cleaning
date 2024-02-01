@@ -1,14 +1,12 @@
 "use client";
 import React from "react";
-import * as SurveyCore from "survey-core";
+import {Model, ITheme} from "survey-core";
 import {Survey} from "survey-react-ui";
 import {themeJson} from "./theme";
 import {useCallback} from "react";
 import type {Survey as SurveyType} from "@prisma/client";
 import {useRouter} from "next/navigation";
-import {inputmask} from "surveyjs-widgets";
 
-inputmask(SurveyCore);
 export default function SurveyComponent({
   questions,
 }: {
@@ -16,8 +14,8 @@ export default function SurveyComponent({
 }) {
   const router = useRouter();
 
-  const survey = new SurveyCore.Model(questions);
-  survey.applyTheme(themeJson as SurveyCore.ITheme);
+  const survey = new Model(questions);
+  survey.applyTheme(themeJson as ITheme);
   survey.onComplete.add(
     useCallback(
       sender => {

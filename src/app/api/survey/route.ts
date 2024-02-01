@@ -16,7 +16,7 @@ const surveySchema = z.object({
       otherRoom: z.number().optional(),
     })
     .optional(),
-  estimatedFootage: z.string(),
+  estimatedFootage: z.number(),
   basement: z.boolean(),
   pet: z.boolean(),
   renovation: z.boolean(),

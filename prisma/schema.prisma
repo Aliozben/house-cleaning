@@ -64,7 +64,7 @@ model Survey {
   existedFrequency  String
   desiredFrequency  String
   rooms             Room?
-  estimatedFootage  String
+  estimatedFootage  Int
   basement          Boolean
   pet               Boolean
   renovation        Boolean

@@ -166,7 +166,7 @@ export const questions = {
           name: "estimatedFootage",
           title: "Estimated Footage",
           isRequired: true,
-          inputMask: "decimal",
+          inputType: "number",
           placeholder: "100",
         },
         {
@@ -268,20 +268,31 @@ export const questions = {
         {
           name: "phone",
           type: "text",
-          inputMask: "phone",
-          inputFormat: "+9(999)-999-99-99",
           visibleIf: "{contact} = 'Call' or {contact} = 'Text'",
           title: "Phone number",
           requiredIf: "{contact} = 'Call' or {contact} = 'Text'",
           inputType: "tel",
+          validators: [
+            {
+              type: "regex",
+              text: "Phone number should be one of these format: 123-456-7890, (123) 456-7890, 123 456 7890, 123.456.7890, +1 (123) 456-7890",
+              regex:
+                "^(\\+\\d{1,2}\\s?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$",
+            },
+          ],
         },
         {
           type: "text",
           name: "email",
           title: "E-mail",
-          inputMask: "email",
           visibleIf: "{contact} = 'Email'",
           requiredIf: "{contact} = 'Email'",
+          inputType: "email",
+          validators: [
+            {
+              type: "email",
+            },
+          ],
         },
         {
           type: "text",
