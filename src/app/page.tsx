@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/components/Button";
-import {NAV_ABOUT_PAGE, NAV_SERVICES_PAGE} from "@/constants";
+import {NAV_GET_OFFER, NAV_SERVICES_PAGE} from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
@@ -28,13 +28,13 @@ export default function Home() {
               type="button"
               text="Request An Estimate"
               variant="btn_green"
-              onClick={() => router.push(NAV_SERVICES_PAGE.href)}
+              onClick={() => router.push(NAV_GET_OFFER.href)}
             />
             <Button
               type="button"
               text="How we work?"
               variant="btn_white_text"
-              onClick={() => router.push(NAV_ABOUT_PAGE.href)}
+              onClick={() => router.push(NAV_SERVICES_PAGE.href)}
             />
           </div>
         </div>
@@ -54,10 +54,9 @@ export default function Home() {
               <li>We are certified professional cleaners.</li>
               <li>7/24 Customer Support.</li>
               <li>All cleaning supplies included.</li>
-              <li><p className="pl-5 -mt-5">
-                  We have the option of disinfecting with steam. Who does not
-                  want a clean environment free of germs?
-                </p>
+              <li>
+                We have the option of disinfecting with steam. Who does not want
+                a clean environment free of germs?
               </li>
               <li>We are bonded and insured</li>
               <li>We guarantee satisfaction </li>
