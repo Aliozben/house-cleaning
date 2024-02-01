@@ -103,7 +103,33 @@ export default async function SurveyDetailsPage({
               <input
                 readOnly
                 type="text"
-                value={survey.environment}
+                value={survey.environment || ""}
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div className="col-span-2">
+            <label className="block text-sm font-semibold leading-6 text-gray-900">
+              Cleaning Interval
+            </label>
+            <div className="mt-2.5">
+              <input
+                readOnly
+                type="text"
+                value={survey.existedFrequency}
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div className="col-span-2">
+            <label className="block text-sm font-semibold leading-6 text-gray-900">
+              Requested Cleaning Interval
+            </label>
+            <div className="mt-2.5">
+              <input
+                readOnly
+                type="text"
+                value={survey.desiredFrequency}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -116,7 +142,7 @@ export default async function SurveyDetailsPage({
               <input
                 readOnly
                 type="text"
-                value={survey.date}
+                value={survey.date || ""}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -129,7 +155,7 @@ export default async function SurveyDetailsPage({
               <input
                 readOnly
                 type="number"
-                value={survey.rooms.bedroom || 0}
+                value={survey.rooms ? survey.rooms.bedroom || 0 : 0}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -142,7 +168,7 @@ export default async function SurveyDetailsPage({
               <input
                 readOnly
                 type="number"
-                value={survey.rooms.bathroom || 0}
+                value={survey.rooms ? survey.rooms.bathroom || 0 : 0}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -155,7 +181,7 @@ export default async function SurveyDetailsPage({
               <input
                 readOnly
                 type="text"
-                value={survey.rooms.halfBathroom || 0}
+                value={survey.rooms ? survey.rooms.halfBathroom || 0 : 0}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -168,7 +194,7 @@ export default async function SurveyDetailsPage({
               <input
                 readOnly
                 type="text"
-                value={survey.rooms.otherRoom || 0}
+                value={survey.rooms ? survey.rooms.otherRoom || 0 : 0}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -181,7 +207,7 @@ export default async function SurveyDetailsPage({
               <input
                 readOnly
                 type="number"
-                value={survey.rooms.estimatedFootage}
+                value={survey.estimatedFootage}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>

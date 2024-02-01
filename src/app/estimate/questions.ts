@@ -63,39 +63,34 @@ export const questions = {
           ],
           imageFit: "cover",
           showLabel: true,
+          isRequired: true,
+          visibleIf: "{type} != 'Office Cleaning'",
         },
       ],
     },
     {
       name: "page3",
-      elemens: [
+      elements: [
         {
-          type: "imagepicker",
-          name: "frequency",
+          type: "radiogroup",
+          name: "existedFrequency",
           title: "How often do you clean your place?",
           choices: [
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/lion.jpg",
               value: "Everyday",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/giraffe.jpg",
               value: "Once a week",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/panda.jpg",
               value: "Once a month",
             },
             {
-              imageLink:
-                "https://surveyjs.io/Content/Images/examples/image-picker/camel.jpg",
               value: "Never",
             },
           ],
           imageFit: "cover",
+          isRequired: true,
           showLabel: true,
         },
       ],
@@ -106,7 +101,7 @@ export const questions = {
         {
           type: "radiogroup",
           name: "desiredFrequency",
-          title: "How often do you want your environment to be cleaned",
+          title: "How often do you want your environment to be cleaned?",
           choices: [
             {
               value: "One time",
@@ -122,6 +117,7 @@ export const questions = {
             },
           ],
           imageFit: "cover",
+          isRequired: true,
           showLabel: true,
         },
       ],
@@ -132,8 +128,8 @@ export const questions = {
         {
           type: "multipletext",
           name: "rooms",
-          title: "How many rooms you want to be cleaned",
-          description: "Please select all that apply.",
+          title: "How many rooms you want to be cleaned.",
+          visibleIf: "{type} != 'Office Cleaning'",
           items: [
             {
               name: "bedroom",
@@ -163,18 +159,20 @@ export const questions = {
               title: "Other Room(s)",
               maxLength: 2,
             },
-            {
-              name: "estimatedFootage",
-              isRequired: true,
-              placeholder: "100",
-              inputType: "number",
-            },
           ],
+        },
+        {
+          type: "text",
+          name: "estimatedFootage",
+          title: "Estimated Footage",
+          isRequired: true,
+          inputMask: "decimal",
+          placeholder: "100",
         },
         {
           type: "boolean",
           name: "basement",
-          title: "Do you also have basement",
+          title: "Do you also have basement?",
           isRequired: true,
         },
         {
@@ -268,8 +266,10 @@ export const questions = {
           ],
         },
         {
-          type: "text",
           name: "phone",
+          type: "text",
+          inputMask: "phone",
+          inputFormat: "+9(999)-999-99-99",
           visibleIf: "{contact} = 'Call' or {contact} = 'Text'",
           title: "Phone number",
           requiredIf: "{contact} = 'Call' or {contact} = 'Text'",
@@ -278,10 +278,10 @@ export const questions = {
         {
           type: "text",
           name: "email",
-          visibleIf: "{contact} = 'Email'",
           title: "E-mail",
+          inputMask: "email",
+          visibleIf: "{contact} = 'Email'",
           requiredIf: "{contact} = 'Email'",
-          inputType: "email",
         },
         {
           type: "text",

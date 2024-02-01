@@ -46,11 +46,10 @@ model User {
 }
 
 type Room {
-  bedroom          Int?
-  bathroom         Int?
-  halfBathroom     Int?
-  otherRoom        Int?
-  estimatedFootage Int
+  bedroom      Int?
+  bathroom     Int?
+  halfBathroom Int?
+  otherRoom    Int?
 }
 
 type NameInfo {
@@ -61,18 +60,20 @@ type NameInfo {
 model Survey {
   id                String    @id @default(auto()) @map("_id") @db.ObjectId
   type              String
-  environment       String
+  environment       String?
+  existedFrequency  String
   desiredFrequency  String
-  rooms             Room
+  rooms             Room?
+  estimatedFootage  String
   basement          Boolean
   pet               Boolean
   renovation        Boolean
   constructionDust  Boolean?
-  date              String
+  date              String?
   additionalDetails String?
   contact           String
   nameInfo          NameInfo
-  phone             Int?
+  phone             String?
   email             String?
   address           String
   sideNote          String?

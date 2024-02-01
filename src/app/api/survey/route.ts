@@ -5,27 +5,30 @@ import {limitter} from "@/lib/rateLimitter";
 
 const surveySchema = z.object({
   type: z.string(),
-  environment: z.string(),
+  environment: z.string().optional(),
+  existedFrequency: z.string(),
   desiredFrequency: z.string(),
-  rooms: z.object({
-    bathroom: z.number().optional(),
-    bedroom: z.number().optional(),
-    halfBathroom: z.number().optional(),
-    otherRoom: z.number().optional(),
-    estimatedFootage: z.number(),
-  }),
+  rooms: z
+    .object({
+      bathroom: z.number().optional(),
+      bedroom: z.number().optional(),
+      halfBathroom: z.number().optional(),
+      otherRoom: z.number().optional(),
+    })
+    .optional(),
+  estimatedFootage: z.string(),
   basement: z.boolean(),
   pet: z.boolean(),
   renovation: z.boolean(),
   contructionDust: z.boolean().optional(),
-  date: z.string(),
+  date: z.string().optional(),
   additionalDetails: z.string().optional(),
   contact: z.string(),
   nameInfo: z.object({
     name: z.string(),
     lastname: z.string(),
   }),
-  phone: z.number().optional(),
+  phone: z.string().optional(),
   email: z.string().optional(),
   address: z.string(),
 });
