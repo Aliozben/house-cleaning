@@ -44,6 +44,7 @@ export const FOOTER = [
     links: [
       {header: "About Atlantis Cleaning LLC", href: "/"},
       {header: "Contact Us", href: "/contact"},
+      {header: "Illustrations by Storyset", href: "https://storyset.com"},
     ],
   },
 ] as const;
@@ -52,8 +53,8 @@ export const FOOTER_CONTACT_INFO = {
   title: "Contact Us",
   links: [
     {label: "Address", value: "Atlantis Cleaning LLC \r Gaithersburg/Maryland"},
-    {label: "Phone", value: "+1 240-507-0918"},
-    {label: "Email", value: "hilink@akinthil.com"},
+    {label: "Phone", value: "(240) 507-0918"},
+    {label: "Email", value: "info@atlantiscleaningllc.com"},
     {label: "Hours", value: "Monday - Saturday 8 AM/6 PM (holidays included)"},
   ],
 } as const;
