@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className="flexBetween max-container padding-container relative z-30 py-5">
       <Link href="/">
-        <Image src="/logo.jpg" alt="logo" width={74} height={29} />
+        <Image src="/logo.jpg" alt="logo" width={125} height={125} />
       </Link>
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map(link => (
@@ -46,9 +46,9 @@ export default function Navbar() {
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open main menu</span>
                 {open ? (
-                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  <XMarkIcon className="block h-9 w-9" aria-hidden="true" />
                 ) : (
-                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  <Bars3Icon className="block h-9 w-9" aria-hidden="true" />
                 )}
               </Disclosure.Button>
               <Disclosure.Panel>
