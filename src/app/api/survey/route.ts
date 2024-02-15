@@ -2,6 +2,7 @@ import {z} from "zod";
 import {NextRequest, NextResponse} from "next/server";
 import prisma from "@/lib/db";
 import {limitter} from "@/lib/rateLimitter";
+import {nofityAdminsForSurveySubmit} from "./controller";
 
 const surveySchema = z.object({
   type: z.string(),
@@ -44,6 +45,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(survey.error.issues, {status: 400});
   }
   const surveyIsSaved = await prisma.survey.create({data: body});
+  nofityAdminsForSurveySubmit(surveyIsSaved);
   return NextResponse.json(surveyIsSaved);
 }
 
