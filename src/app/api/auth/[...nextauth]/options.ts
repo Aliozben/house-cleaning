@@ -18,20 +18,28 @@ export const options: NextAuthOptions = {
         password: {label: "Password", type: "password"},
       },
       async authorize(credentials) {
-        if (!credentials || !credentials.username || !credentials.password)
+        if (!credentials || !credentials.username || !credentials.password) {
+          console.error("Empty credentials,", credentials);
           return null;
+        }
         const user = await prisma.user.findFirst({
           where: {
             username: credentials.username,
           },
         });
-        if (!user || !user.password) return null;
+        if (!user || !user.password) {
+          console.error("User couldn't found!", credentials);
+          return null;
+        }
 
         const passwordCorrect = await bcrypt.compare(
           credentials.password,
           user.password
         );
-        if (!passwordCorrect) return null;
+        if (!passwordCorrect) {
+          console.error("Password is wrong!", credentials);
+          return null;
+        }
         return user;
       },
     }),
