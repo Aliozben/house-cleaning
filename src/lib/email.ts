@@ -23,12 +23,17 @@ type Email = {
 };
 export async function sendMail(context: Email) {
   const {to, subject, html} = context;
-
-  const info = await transporter.sendMail({
-    to,
-    subject,
-    html: render(html),
-  });
-  console.log("Message sent: %s", info);
-  return info;
+  try {
+    console.log("transporter", transporter);
+    const info = await transporter.sendMail({
+      to,
+      subject,
+      html: render(html),
+    });
+    console.log("Message sent: %s", info);
+    return info;
+  } catch (error) {
+    console.log("error while sending email", error);
+    return error;
+  }
 }
