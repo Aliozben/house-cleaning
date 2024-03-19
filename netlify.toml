@@ -1,0 +1,4 @@
+[[plugins]]
+  package = "@netlify/plugin-emails"
+[build]
+  command = "pnpm run build"
