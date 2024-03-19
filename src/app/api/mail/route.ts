@@ -2,9 +2,9 @@ import SurveySubmitEmail from "@/emails/SurveySubmit";
 import {sendMail} from "@/lib/email";
 import {getSurvey} from "@/utils/db";
 import {NextResponse} from "next/server";
-import {nofityAdminsForSurveySubmit} from "../survey/controller";
+// import {nofityAdminsForSurveySubmit} from "../survey/controller";
 // import {nofityAdminsForSurveySubmit} from "@/actions/emails/action";
-import {sendEmail} from "@netlify/emails";
+// import {sendEmail} from "@netlify/emails";
 
 export async function GET() {
   // await nofityAdminsForSurveySubmit();
