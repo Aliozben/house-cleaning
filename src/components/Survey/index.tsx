@@ -1,16 +1,18 @@
 "use client";
+
 import React from "react";
 import {Model, ITheme} from "survey-core";
 import {Survey} from "survey-react-ui";
 import {themeJson} from "./theme";
 import {useCallback} from "react";
-import type {Survey as SurveyType} from "@prisma/client";
 import {useRouter} from "next/navigation";
 
 export default function SurveyComponent({
   questions,
+  callback,
 }: {
   questions: Record<string, string | unknown>;
+  callback: (sender: Model) => void;
 }) {
   const router = useRouter();
 
@@ -18,19 +20,14 @@ export default function SurveyComponent({
   survey.applyTheme(themeJson as ITheme);
   survey.onComplete.add(
     useCallback(
-      sender => {
-        saveSurveyResult(sender.data);
-        router.push("/estimate/thanks");
+      (sender, options) => {
+        options.showSaveInProgress("Saving...");
+        callback(sender);
+        router.push("/");
       },
-      [router]
+      [callback, router]
     )
   );
+
   return <Survey model={survey} />;
 }
-
-const saveSurveyResult = (data: SurveyType) => {
-  fetch("/api/survey", {
-    method: "POST",
-    body: JSON.stringify(data),
-  });
-};
