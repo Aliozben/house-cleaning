@@ -4,6 +4,7 @@ import {MinusCircleIcon} from "@heroicons/react/24/outline";
 import useSWR, {useSWRConfig} from "swr";
 import {fetcher} from "@/utils/api";
 import {Survey} from "@prisma/client";
+import Loading from "@/app/loading";
 
 function SurveyList() {
   const {mutate} = useSWRConfig();
@@ -15,7 +16,7 @@ function SurveyList() {
     "/api/survey",
     fetcher
   );
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
   if (error || !surveys) {
     error ?? console.log("Couldn't fetch survey list. ", error);
     return <div>Error incurded.</div>;
@@ -38,7 +39,10 @@ function SurveyList() {
     <ul role="list" className="divide-y divide-gray-100">
       {surveys.length > 0 ? (
         surveys.map(survey => (
-          <li key={survey.id} className="flex justify-between items-center gap-x-6 py-5">
+          <li
+            key={survey.id}
+            className="flex justify-between items-center gap-x-6 py-5"
+          >
             <Link href={`/dashboard/surveys/${survey.id}`} key={survey.id}>
               <div className="flex min-w-0 gap-x-4">
                 <div className="min-w-0 flex-auto">
