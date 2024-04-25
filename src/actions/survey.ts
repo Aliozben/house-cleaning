@@ -3,6 +3,7 @@
 import {Survey} from "@prisma/client";
 import {z} from "zod";
 import prisma from "@/lib/db";
+import {notifyAdminsOnSurveySubmit} from "./email";
 
 const surveySchema = z.object({
   type: z.string(),
@@ -34,13 +35,14 @@ const surveySchema = z.object({
   address: z.string(),
 });
 
-export default async function saveSurvey(survey: Survey) {
+export default async function saveSurvey(survey: unknown) {
   //TODO: rateLimitter
   const validSurvey = surveySchema.safeParse(survey);
   if (!validSurvey.success) {
     console.error(validSurvey.error.issues);
-    return validSurvey.error;
+    return;
   }
-  const surveyIsSaved = await prisma.survey.create({data: survey});
-  return surveyIsSaved;
+  const surveyIsSaved = await prisma.survey.create({data: validSurvey.data});
+  notifyAdminsOnSurveySubmit(surveyIsSaved);
+  console.log("[saveSurvey], survey is saved.", surveyIsSaved);
 }

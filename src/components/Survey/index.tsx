@@ -12,7 +12,7 @@ export default function SurveyComponent({
   callback,
 }: {
   questions: Record<string, string | unknown>;
-  callback: (sender: Model) => void;
+  callback: (sender: unknown) => Promise<void>;
 }) {
   const router = useRouter();
 
@@ -21,9 +21,10 @@ export default function SurveyComponent({
   survey.onComplete.add(
     useCallback(
       (sender, options) => {
-        options.showSaveInProgress("Saving...");
-        callback(sender);
-        router.push("/");
+        options.showSaveInProgress("Submitting...");
+        callback(sender.data).then(() => {
+          router.push("/estimate/thanks");
+        });
       },
       [callback, router]
     )
