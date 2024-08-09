@@ -60,7 +60,7 @@ function SurveyList() {
                 <p className="mt-1 text-xs leading-5 text-gray-500">
                   {survey.lastReadDate ? (
                     <time dateTime={new Date().toUTCString()}>
-                      {new Date().toUTCString()}
+                      {new Date(survey.lastReadDate).toUTCString()}
                     </time>
                   ) : (
                     <p className="font-bold text-red-600">NEW!</p>
