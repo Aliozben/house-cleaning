@@ -43,6 +43,6 @@ export default async function saveSurvey(survey: unknown) {
     return;
   }
   const surveyIsSaved = await prisma.survey.create({data: validSurvey.data});
-  notifyAdminsOnSurveySubmit(surveyIsSaved);
+  await notifyAdminsOnSurveySubmit(surveyIsSaved);
   console.log("[saveSurvey], survey is saved.", surveyIsSaved);
 }

@@ -6,10 +6,12 @@ import SurveySubmitEmail from "@/emails/SurveySubmit";
 import {Survey} from "@prisma/client";
 
 export async function notifyAdminsOnSurveySubmit(survey: Survey) {
-  const adminEmails = await prisma.user.findMany({
-    select: {email: true},
-  });
+  console.log("notifyAdminsOnSurveySubmit");
   try {
+    const adminEmails = await prisma.user.findMany({
+      select: {email: true},
+    });
+    console.log("adminMails", adminEmails);
     await Promise.all(
       adminEmails.map(async user => {
         await sendEmail({
