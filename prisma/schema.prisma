@@ -1,0 +1,81 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  username      String?   @unique
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String
+  sessions      Session[]
+  accounts      Account[]
+}
+
+type Room {
+  bedroom      Int?
+  bathroom     Int?
+  halfBathroom Int?
+  otherRoom    Int?
+}
+
+type NameInfo {
+  name     String
+  lastname String
+}
+
+model Survey {
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  type              String
+  environment       String?
+  existedFrequency  String
+  desiredFrequency  String
+  rooms             Room?
+  estimatedFootage  Int
+  basement          Boolean
+  pet               Boolean
+  renovation        Boolean
+  constructionDust  Boolean?
+  date              String?
+  additionalDetails String?
+  contact           String
+  nameInfo          NameInfo
+  phone             String?
+  email             String?
+  address           String
+  sideNote          String?
+  lastReadDate      DateTime?
+}
