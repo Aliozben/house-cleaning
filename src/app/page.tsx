@@ -3,10 +3,39 @@ import Button from "@/components/Button";
 import {NAV_GET_OFFER, NAV_SERVICES_PAGE} from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import {useRouter} from "next/navigation";
+import {MapPin} from "lucide-react";
+import {useState} from "react";
+import {ServingLocations} from "@/components/home/ServingLocations";
 
+const areas = {
+  MARYLAND: [
+    "Chevy Chase",
+    "Bethesda",
+    "Potomac",
+    "Silver Spring",
+    "South Kensington",
+    "Rockville",
+    "Forest Glen",
+    "Cabin John",
+    "Ashton",
+    "Aspen Hill",
+    "Olney",
+    "Gaithersburg",
+    "Montgomery village",
+    "Germantown",
+    "Clarksburg",
+  ],
+  VIRGINIA: ["Alexandria", "Arlington", "McLean", "Tysons", "Fairfax"],
+};
+
+const services = [
+  "General Cleaning",
+  "Detailed Cleaning/One time cleaning",
+  "Move in-move out Cleaning",
+  "Construction Cleaning",
+  "Office Cleaning",
+];
 export default function Home() {
-  const router = useRouter();
   return (
     <>
       <section className="max-container padding-container flex flex-col gap-20 pt-10 pb-16 md:gap-28 lg:py-20 xl:flex-row">
@@ -24,18 +53,20 @@ export default function Home() {
             Maryland, Virginia and Washington DC areas.
           </p>
           <div className="mt-10 w-full gap-3 flex flex-col sm:flex-row">
-            <Button
-              type="button"
-              text="Request An Estimate"
-              variant="btn_green"
-              onClick={() => router.push(NAV_GET_OFFER.href)}
-            />
-            <Button
-              type="button"
-              text="How we work?"
-              variant="btn_white_text"
-              onClick={() => router.push(NAV_SERVICES_PAGE.href)}
-            />
+            <Link href={NAV_GET_OFFER.href}>
+              <Button
+                type="button"
+                text="Request An Estimate"
+                variant="btn_green"
+              />
+            </Link>
+            <Link href={NAV_SERVICES_PAGE.href}>
+              <Button
+                type="button"
+                text="How we work?"
+                variant="btn_white_text"
+              />
+            </Link>
           </div>
         </div>
 
@@ -83,82 +114,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flexCenter flex-col mb-5">
-        <div className="padding-container max-container w-full pb-24 ">
-          <Image src="/service.svg" alt="camp" width={40} height={40} />
-          <p className="uppercase regular-18 mb-2 text-green-50">
-            We are here for you
-          </p>
-          <div className="flex flex-wrap justify-between gap-5 lg:gap-10">
-            <h2 className="bold-40 lg:bold-64 xl:max-w-[390px]">We provide:</h2>
-            <div className="regular-16 text-gray-30 xl:max-w-[520px]">
-              <Link href="/services">
-                <li>General Cleaning </li>
-                <li>Detailed Cleaning/One time cleaning </li>
-                <li>Move in-move out Cleaning </li>
-                <li>Construction Cleaning</li>
-                <li>Office Cleaning</li>
-              </Link>
+      <section className="">
+        <div className="container mx-auto px-4">
+          <div className="mb-16">
+            <div className="flex items-center mb-4">
+              <Image
+                src="/service.svg"
+                alt="Services icon"
+                width={40}
+                height={40}
+                className="mr-4"
+              />
+              <p className="text-green-600 font-semibold uppercase tracking-wide">
+                We are here for you
+              </p>
+            </div>
+            <div className="flex flex-col lg:flex-row justify-between items-start">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 lg:mb-0 lg:w-1/3">
+                We provide:
+              </h2>
+              <ul className="text-lg text-gray-700 lg:w-2/3 space-y-2">
+                {services.map((service, index) => (
+                  <li key={index} className="flex items-center">
+                    <svg
+                      className="w-5 h-5 mr-2 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {service}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+          <ServingLocations />
         </div>
 
-        <div className="flexCenter max-container relative h-fit">
-          <Image
-            src="/img-2-reverse.jpg"
-            alt="boat"
-            width={1040}
-            height={580}
-            className="h-full w-full min-h-[580px] object-cover object-center 2xl:rounded-5xl"
-          />
-
-          <div className="absolute flex bg-white py-8 pl-5 pr-7 gap-3 rounded-3xl border shadow-md md:left-[5%] lg:top-20">
-            <div className="flexBetween flex-col">
-              <div className="flex w-full flex-col">
-                <p className="bold-20 mb-2">Areas We Serve:</p>
-              </div>
-
-              <div className="flex w-full flex-col ">
-                <div className="flex content-between gap-10">
-                  <div>
-                    <strong>MARYLAND</strong>
-                    <p>Chevy Chase</p>
-                    <p>Bethesda</p>
-                    <p>Potomac</p>
-                    <p>Silver Spring</p>
-                    <p>South Kensington</p>
-                    <p>Rockville</p>
-                    <p>Forest Glen</p>
-                    <p>Cabin John</p>
-                    <p>Ashton</p>
-                    <p>Aspen Hill</p>
-                    <p>Olney</p>
-                    <p>Gaithersburg </p>
-                    <p>Montgomery village </p>
-                    <p>Germantown</p>
-                    <p>Clarksburg</p>
-                  </div>
-                  <div>
-                    <strong>VIRGINIA</strong>
-                    <p>Alexandria</p>
-                    <p>Arlington</p>
-                    <p>McLean</p>
-                    <p>Vienna</p>
-                    <p>Great Falls</p>
-                    <p>Fairfax</p>
-                  </div>
-                  <div>
-                    <strong className=" ">WASHINGTON, DC </strong>
-                    <p>Cleveland Park</p>
-                    <p>Georgetown</p>
-                    <p>Wesley Heights</p>
-                    <p>Palisades</p>
-                    <p>Woodley Park</p>
-                    <p>Kalorama</p>
-                    <p>Capitol Hill</p>
-                  </div>
-                </div>
-              </div>
+        <div className="bg-green-600 text-white py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-extrabold sm:text-4xl">
+              Ready for a spotless space?
+            </h2>
+            <p className="mt-4 text-lg leading-6">
+              Book our professional cleaning service today and experience the
+              difference!
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/estimate"
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-green-600 bg-white hover:bg-green-10"
+              >
+                Book Now
+              </Link>
             </div>
           </div>
         </div>
