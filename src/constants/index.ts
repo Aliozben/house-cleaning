@@ -44,7 +44,6 @@ export const FOOTER = [
     links: [
       {header: "About Atlantis Cleaning LLC", href: "/"},
       {header: "Contact Us", href: "/contact"},
-      {header: "Illustrations by Storyset", href: "https://storyset.com"},
     ],
   },
 ] as const;

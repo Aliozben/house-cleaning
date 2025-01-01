@@ -42,15 +42,12 @@ export default function Home() {
         <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
           <h1 className="bold-52 lg:bold-88">Atlantis Cleaning Service</h1>
           <p className="regular-20 mt-6 text-green-50 xl:max-w-[520px]">
-            Professional Residential and Commercial Cleaning Service Cleanliness
-            is the ultimate style.
-          </p>
-          <p className="regular-20 text-green-50 xl:max-w-[520px]">
-            Let us create that style!
+            Professional Residential and Commercial Cleaning Services
           </p>
           <p className=" font-medium text-greey-30 mt-3">
-            Atlantis cleaning service is a woman-owned company. We serve the
-            Maryland, Virginia and Washington DC areas.
+            Atlantis Cleaning Service, a proud woman-owned business, provides
+            exceptional cleaning solutions to clients across Maryland and
+            Virginia.
           </p>
           <div className="mt-10 w-full gap-3 flex flex-col sm:flex-row">
             <Link href={NAV_GET_OFFER.href}>
@@ -82,18 +79,19 @@ export default function Home() {
               <strong> Why should you choose Atlantis Cleaning Service?</strong>
             </h2>
             <div className="regular-12 xl:regular-16 mt-5 text-gary-100">
-              <li>We are certified professional cleaners.</li>
-              <li>7/24 Customer Support.</li>
-              <li>All cleaning supplies included.</li>
+              <li>Certified and highly trained professional cleaners.</li>
+              <li>24/7 customer support for your convenience.</li>
               <li>
-                We have the option of disinfecting with steam. Who does not want
-                a clean environment free of germs?
+                All cleaning supplies provided—no additional costs or hassle.
               </li>
-              <li>We are bonded and insured</li>
-              <li>We guarantee satisfaction </li>
-              <li>We give a 15% off your first cleaning job</li>
-              <li>Refer a new friend get 15% off both</li>
-              <li>20% off a full house cleaning during the holiday season</li>
+              <li>
+                Steam disinfection services available for a thoroughly
+                sanitized, germ-free environment.
+              </li>
+              <li>Fully bonded and insured for your peace of mind.</li>
+              <li>
+                Commitment to 100% satisfaction—guaranteed results every time.
+              </li>
             </div>
             <Image
               src="/cleaningGreen.svg"
