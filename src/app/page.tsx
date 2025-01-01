@@ -82,7 +82,7 @@ export default function Home() {
               <li>Certified and highly trained professional cleaners.</li>
               <li>24/7 customer support for your convenience.</li>
               <li>
-                All cleaning supplies provided—no additional costs or hassle.
+                All cleaning supplies provided no additional costs or hassle.
               </li>
               <li>
                 Steam disinfection services available for a thoroughly
@@ -90,7 +90,7 @@ export default function Home() {
               </li>
               <li>Fully bonded and insured for your peace of mind.</li>
               <li>
-                Commitment to 100% satisfaction—guaranteed results every time.
+                Commitment to 100% satisfaction guaranteed results every time.
               </li>
             </div>
             <Image
