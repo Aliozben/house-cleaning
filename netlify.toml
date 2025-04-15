@@ -1,4 +1,6 @@
 [[plugins]]
   package = "@netlify/plugin-emails"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 [build]
-  command = "pnpm run build"
+  command = "pnpm rebuild bcrypt --build-from-source && pnpm run build"
