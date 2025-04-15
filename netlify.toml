@@ -3,4 +3,5 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 [build]
-  command = "pnpm rebuild bcrypt --build-from-source && pnpm run build"
+  command = "pnpm run build"
+  publish = ".next"
